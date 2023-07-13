@@ -13,7 +13,7 @@ import java.io.IOException;public class WriterData {
     public void write() throws IOException {
         File file = new File(parcerData.getSurname() + ".txt");
         if (file.createNewFile()) {
-            System.out.println(" ???? ?????? ? ???????? ?????????? ???????");
+            System.out.println(" файл создан в корневой директории проекта");
             try (FileWriter fw = new FileWriter(file, true)) {
                 if (file.length() == 0) {
                     fw.write(parcerData.getFullName() + " " + parcerData.getDate() + " " + parcerData.getPhone() + " " + parcerData.getGender());
@@ -23,10 +23,10 @@ import java.io.IOException;public class WriterData {
             } catch (IOException e) {
                 throw new IOException("sddasda");
             } catch (OutOfMemoryError m) {
-                throw new OutOfMemoryError("?? ??????? ??????");
+                throw new OutOfMemoryError("Не хватает памяти");
             }
         } else {
-            System.out.println("?????????? ????? " + file);
+            System.out.println("Обновление файла " + file);
             try (FileWriter fw = new FileWriter(file, true)) {
                 if (file.length() == 0) {
                     fw.write(parcerData.getFullName() + " " + parcerData.getDate() + " " + parcerData.getPhone() + " " + parcerData.getGender());
@@ -36,7 +36,7 @@ import java.io.IOException;public class WriterData {
             } catch (IOException e) {
                 throw new IOException("sddasda");
             } catch (OutOfMemoryError m) {
-                throw new OutOfMemoryError("?? ??????? ??????");
+                throw new OutOfMemoryError("Не хватает памяти");
             }
         }
 
